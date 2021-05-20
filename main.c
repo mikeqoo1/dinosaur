@@ -58,9 +58,9 @@ int main(int argc, char *argv[])
     gst_init(&argc, &argv);         /* Initialize our data structure */
     memset(&data, 0, sizeof(data)); /* Build the pipeline */
     pipeline = 
-	//gst_parse_launch("playbin uri=https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm", NULL);
+	gst_parse_launch("playbin uri=https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm", NULL);
 	//gst_parse_launch("playbin uri=rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov", NULL);
-	gst_parse_launch("playbin uri=https://youtu.be/2Gw4K7oqK08", NULL);
+	//gst_parse_launch("playbin uri=https://youtu.be/2Gw4K7oqK08", NULL);
     bus = gst_element_get_bus(pipeline); /* Start playing */
     ret = gst_element_set_state(pipeline, GST_STATE_PLAYING);
     if (ret == GST_STATE_CHANGE_FAILURE)
